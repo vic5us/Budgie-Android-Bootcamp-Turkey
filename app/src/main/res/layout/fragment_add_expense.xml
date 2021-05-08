@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddExpenseFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_expense_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="64dp"
+        style="@style/inputLayoutStyles"
+        android:hint="@string/description"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_expense_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_expense_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/amount"
+        style="@style/inputLayoutStyles"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_expense_desc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_expense_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_type_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="@id/ti_expense_amount"
+        app:layout_constraintTop_toBottomOf="@id/ti_expense_amount">
+
+        <TextView
+            android:id="@+id/t_type_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chooseExpense"
+            />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_rent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rent"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/market"
+            />
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_currency_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="@id/rg_type_expense"
+        app:layout_constraintTop_toBottomOf="@id/rg_type_expense">
+
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_try"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tl"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_eur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eur"
+            />
+
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_usd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usd"
+            />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_gbp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gbp"
+            />
+
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_add_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rg_currency_expense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/buttonStyles"
+        android:layout_marginEnd="16dp"
+        android:text="@string/add"
+        ></com.google.android.material.button.MaterialButton>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

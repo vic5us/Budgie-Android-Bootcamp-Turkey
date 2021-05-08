@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Budgie</string>
+    <string name="home">Home</string>
+    <string name="description">Description</string>
+    <string name="amount">Amount</string>
+    <string name="chooseExpense">Choose type of your expense . :</string>
+    <string name="rent">Rent</string>
+    <string name="market">Shopping</string>
+    <string name="other">Other</string>
+    <string name="eur">EUR</string>
+    <string name="tl">TRY</string>
+    <string name="usd">USD</string>
+    <string name="gbp">GBP</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="all_in_one">All in One</string>
+    <string name="aio_desc">All expenses in your pocket\n with categories</string>
+    <string name="next">Next</string>
+    <string name="all">ALL</string>
+    <string name="hello">Hello</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="she_her">She/Her</string>
+    <string name="he_him">He/Him</string>
+    <string name="they_them">They/Them</string>
+    <string name="i_prefer_not_to_say">I prefer not to say</string>
+    <string name="save">Save</string>
+    <string name="easy_to_use">Easy to Use</string>
+    <string name="you_can_easily_add_you_expense_nin_budgie">You can easily add you expense\n in Budgie</string>
+    <string name="budgie_budget_manager">Budgie\n Budget Manager</string>
+    <string name="see_you_expenses_with_multiple_currency_rate">See you expenses\n with multiple currency rate</string>
+    <string name="finish">Finish</string>
+    <string name="exchange_currencies">Exchange Currencies</string>
+</resources>

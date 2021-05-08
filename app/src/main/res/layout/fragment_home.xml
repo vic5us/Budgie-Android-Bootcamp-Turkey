@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context=".view.HomeFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="24dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@id/chipEur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/grad"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-thin"
+                android:text="@string/hello"
+                android:textAlignment="center"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chipAll"
+        style="@style/buttonStyles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/all"
+        app:layout_constraintBottom_toTopOf="@id/glHome"
+        app:layout_constraintEnd_toStartOf="@id/chipTry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glHome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chipTry"
+        style="@style/buttonStyles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tl"
+        app:layout_constraintBottom_toTopOf="@id/glHome"
+        app:layout_constraintEnd_toStartOf="@id/chipEur"
+        app:layout_constraintStart_toEndOf="@+id/chipAll"
+        app:layout_constraintTop_toBottomOf="@id/glHome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chipEur"
+        style="@style/buttonStyles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/eur"
+        app:layout_constraintBottom_toTopOf="@id/glHome"
+        app:layout_constraintEnd_toStartOf="@id/chipUsd"
+        app:layout_constraintStart_toEndOf="@+id/chipTry"
+        app:layout_constraintTop_toBottomOf="@id/glHome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chipUsd"
+        style="@style/buttonStyles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/usd"
+        app:layout_constraintBottom_toTopOf="@id/glHome"
+        app:layout_constraintEnd_toStartOf="@id/chipGbp"
+        app:layout_constraintStart_toEndOf="@+id/chipEur"
+        app:layout_constraintTop_toBottomOf="@id/glHome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chipGbp"
+        style="@style/buttonStyles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/gbp"
+        app:layout_constraintBottom_toTopOf="@id/glHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chipUsd"
+        app:layout_constraintTop_toBottomOf="@id/glHome" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="183dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipEur"
+        tools:listitem="@layout/item_row" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_plus"
+            app:backgroundTint="@color/red"
+            app:elevation="6dp"
+            app:fabCustomSize="75dp" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

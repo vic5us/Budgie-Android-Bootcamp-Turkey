@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttonStyles" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">#32681d</item>
+        <item name="elevation">8dp</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+    <style name="inputLayoutStyles" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+    </style>
+
+</resources>
