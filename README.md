@@ -34,8 +34,7 @@
 <img src="https://github.com/vic5us/Budgie-Android-Bootcamp-Turkey/blob/main/screenshots/exchange.jpg" width="250px">
 
 ### Ana Ekran
-<img src="https://github.com/vic5us/Budgie-Android-Bootcamp-Turkey/blob/main/screenshots/home.jpg" width="250px">
-<img src="https://github.com/vic5us/Budgie-Android-Bootcamp-Turkey/blob/main/screenshots/homelight.jpg" width="250px">
+<img src="https://github.com/vic5us/Budgie-Android-Bootcamp-Turkey/blob/main/screenshots/home.jpg" width="250px">&emsp;<img src="https://github.com/vic5us/Budgie-Android-Bootcamp-Turkey/blob/main/screenshots/homelight.jpg" width="250px">
 
 ### Profil Ekranı
 <img src="https://github.com/vic5us/Budgie-Android-Bootcamp-Turkey/blob/main/screenshots/profile.jpg" width="250px">
