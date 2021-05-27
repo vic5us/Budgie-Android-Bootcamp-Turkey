@@ -1,3 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Budgie</string>
+    <string name="home">Ana</string>
+    <string name="description">Açıklama</string>
+    <string name="amount">Miktar</string>
+    <string name="chooseExpense">Harcama tipini seçiniz</string>
+    <string name="rent">Kira</string>
+    <string name="market">Market</string>
+    <string name="other">Diğer</string>
+    <string name="eur">Euro</string>
+    <string name="tl">Tl</string>
+    <string name="usd">Dolar</string>
+    <string name="gbp">Sterlin</string>
+    <string name="add">Ekle</string>
+    <string name="delete">Sil</string>
+    <string name="all_in_one">Hepsi bir arada</string>
+    <string name="aio_desc">Tüm harcamalarınız cebinizde</string>
+    <string name="next">Geç</string>
+    <string name="all">Tümü</string>
+    <string name="hello">Merhaba</string>
+    <string name="enter_name">İsminizi giriniz</string>
+    <string name="she_her">Kadın</string>
+    <string name="he_him">Erkek</string>
+    <string name="they_them">Diğer</string>
+    <string name="i_prefer_not_to_say">Belirtmek istemiyorum</string>
+    <string name="save">Kaydet</string>
+    <string name="easy_to_use">Kolay Kullanım</string>
+    <string name="you_can_easily_add_you_expense_nin_budgie">Kolayca harcamalarınızı ekleyebilirsiniz</string>
+    <string name="budgie_budget_manager">Budgie Harcama Takibi</string>
+    <string name="see_you_expenses_with_multiple_currency_rate">Harcamalarınızı diğer kurlarda görün</string>
+    <string name="finish">Bitir</string>
+    <string name="exchange_currencies">Kur Değiştirme</string>
 </resources>
