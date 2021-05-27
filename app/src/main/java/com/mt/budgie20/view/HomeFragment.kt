@@ -3,12 +3,16 @@ package com.mt.budgie20.view
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -107,6 +111,13 @@ class HomeFragment : Fragment(),
         }
     }
 
+    private fun isOnline() : Boolean {
+        val cm = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+        val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+        return isConnected
+    }
+
     @SuppressLint("SetTextI18n")
     private fun observers() {
         binding!!.apply {
@@ -138,43 +149,57 @@ class HomeFragment : Fragment(),
                                 )
                             }
                             chipTry.setOnClickListener {
-                                mAdapter.updateDataList(
-                                    exp,
-                                    listOf(
-                                        1.0,
-                                        rates[0].rateValue,
-                                        rates[1].rateValue,
-                                        rates[2].rateValue
-                                    ),
-                                    listOf("₺", "₺", "₺", "₺")
-                                )
+                                if (isOnline())
+                                {
+                                    mAdapter.updateDataList(
+                                        exp,
+                                        listOf(
+                                            1.0,
+                                            rates[0].rateValue,
+                                            rates[1].rateValue,
+                                            rates[2].rateValue
+                                        ),
+                                        listOf("₺", "₺", "₺", "₺")
+                                    )
+                                }else{
+                                    Toast.makeText(context, "Connect to the internet first", Toast.LENGTH_SHORT).show()
+                                }
                             }
                             chipEur.setOnClickListener {
-                                mAdapter.updateDataList(
-                                    exp,
-                                    listOf(
-                                        1.0.div(rates[0].rateValue),
-                                        1.0,
-                                        1.0.div(rates[3].rateValue),
-                                        1.0.div(rates[4].rateValue)
-                                    ),
-                                    listOf("€", "€", "€", "€")
-                                )
+                                if(isOnline()){
+                                    mAdapter.updateDataList(
+                                        exp,
+                                        listOf(
+                                            1.0.div(rates[0].rateValue),
+                                            1.0,
+                                            1.0.div(rates[3].rateValue),
+                                            1.0.div(rates[4].rateValue)
+                                        ),
+                                        listOf("€", "€", "€", "€")
+                                    )
+                                }else{
+                                    Toast.makeText(context, "Connect to the internet first", Toast.LENGTH_SHORT).show()
+                                }
 
                             }
                             chipUsd.setOnClickListener {
-                                mAdapter.updateDataList(
-                                    exp,
-                                    listOf(
-                                        1.0.div(rates[1].rateValue),
-                                        rates[3].rateValue,
-                                        1.0,
-                                        1.0.div(rates[5].rateValue)
-                                    ),
-                                    listOf("$", "$", "$", "$")
-                                )
+                                if(isOnline()) {
+                                    mAdapter.updateDataList(
+                                        exp,
+                                        listOf(
+                                            1.0.div(rates[1].rateValue),
+                                            rates[3].rateValue,
+                                            1.0,
+                                            1.0.div(rates[5].rateValue)
+                                        ),
+                                        listOf("$", "$", "$", "$")
+                                    )
+                                }else{
+                                    Toast.makeText(context, "Connect to the internet", Toast.LENGTH_SHORT).show()
+                                }
                             }
                             chipGbp.setOnClickListener {
+                                if (isOnline()){
                                 mAdapter.updateDataList(
                                     exp,
                                     listOf(
@@ -184,7 +209,9 @@ class HomeFragment : Fragment(),
                                         1.0
                                     ),
                                     listOf("£", "£", "£", "£")
-                                )
+                                )}else{
+                                    Toast.makeText(context, "Connect to the internet", Toast.LENGTH_SHORT).show()
+                                }
                             }
                         })
                     }
